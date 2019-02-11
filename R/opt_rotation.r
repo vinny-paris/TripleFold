@@ -1,6 +1,6 @@
 #' Finds an Optimal Rotation Vector
 #' 
-#' This function will produce an optimal rotation vector for some design. It will produce Resolution IV if possible and if not will find a minimal aberration. If multiple minimal aberration designs exist it will randomly choose one and ignore any "desirability" between factors.
+#' This function will produce an optimal rotation vector for some design. It will produce Resolution IV if possible and if not will find a minimal aberration. If multiple minimal aberration designs exist it will seek to minimize the number of 4th order terms and then return all vectors who do as well in that situation.
 #' 
 #' @export
 #' 
