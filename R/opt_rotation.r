@@ -15,7 +15,7 @@
 #' x <- c("a", "b", "c", "d", "e", "f")
 #'l <- matrix(c(1,2,0,1,1,1, 0,1,1,2,0,0, 1,1,1,2,2,0), nrow = 3, byrow = TRUE)
 #'trees <- c(0,0,0)
-#'m <- TripleFrac:::part(x, l, trees)[[1]]
+#'m <- TripleFold:::part(x, l, trees)[[1]]
 #'head(m)
 #'what_frac(m)
 #'opt_rotation(m)

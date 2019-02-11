@@ -21,7 +21,7 @@ alias_machine <- function(num_of_vars, l){
 
   x <- num_of_vars
   
-  latin <- TripleFrac::latin
+  latin <- TripleFold::latin
   
   sizing <- if(length(dim(l)) != 0) {dim(l)[1]} else{1}
     
