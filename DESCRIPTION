@@ -1,0 +1,12 @@
+Package: TripleFold
+Type: Package
+Title: Implementation of the Triple Foldover Method
+Version: 1.2.0
+Author: R Vincent Paris
+Maintainer: R Vincent Paris <vinny@iastate.edu>
+Description: This package seeks to create an easy and simple setting for a 3-level fractional factorial design to be expanded optimally.
+License: GPL-2
+Depends: data.table
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.0
