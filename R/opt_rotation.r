@@ -70,7 +70,10 @@ opt_rotation <- function(design){
   
   
   
-  
+  #create g4
+  ind4 <- holding^2 %% 3
+  cr_4 <- rowSums(ind4) == 4
+  g4 <- holding[cr_4, ]
   
   
   
@@ -111,7 +114,18 @@ opt_rotation <- function(design){
   
   if(sum(outs != 0 )) {sol <-  (which(outs != 0))}
   
-  sol <- as.data.frame(sol)
+  if(class(g4) == "matrix"){
+  outs4 <- (sol %*% t(g4)) %% 3
+  ri_num4 <- rowSums(outs4 != 0)
+  sol4 <- sol[(which(ri_num4 == max(ri_num4))),]
+  }
+  if(class(g4) == "vector"){
+    outs4 <- sol %*% g4 %% 3
+    if(sum(outs4 != 0)) {sol4 <- which(outs4 != 0)}
+  }
+  
+  
+  sol <- as.data.frame(sol4)
   
   colnames(sol) <- "Resolution IV Obtainable"
   
@@ -129,15 +143,37 @@ opt_rotation <- function(design){
     
     sol <- possible_equations[(which(ri_num == max(ri_num))),]
     
+    
+    
+    
+    
+    
+    
+    if(class(g4) == "matrix"){
+      outs4 <- (sol %*% t(g4)) %% 3
+      ri_num4 <- rowSums(outs4 != 0)
+      sol4 <- sol[(which(ri_num4 == max(ri_num4))),]
+    }
+    if(class(g4) == "vector"){
+      outs4 <- sol %*% g4 %% 3
+      if(sum(outs4 != 0)) {sol4 <- which(outs4 != 0)}
+    }
+    
+    
+    
+    
+    
+    
+    
     colnames(g3) <- NULL
     
-    result <- list(sol, g3)
+    result <- list(sol4, g3)
     
     names(result)[[2]] <- "psuedo-design matrix"
     
     theo_max <- dim(g3)[1]
     
-    if(max(ri_num) == theo_max){ names(result)[1]<- "Resolution IV Obtainable"} else {names(result)[1] <- "Minimum Aberration Achieved"}
+    if(max(ri_num) == theo_max){ names(result)[1]<- "Resolution IV Obtainable"} else {names(result)[1] <- "Minimum Aberration Achieved In 3rd and 4th Order"}
 
     
   }
