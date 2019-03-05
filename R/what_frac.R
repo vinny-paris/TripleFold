@@ -18,7 +18,7 @@
 
 
 what_frac <- function(design_matrix){
-  
+  design <- design_matrix
   if(sum(class(design) == c("matrix", "data.frame")) == 0 ) {stop("Please give the design as a matrix or data.frame!", call. = FALSE)}
   if(sum(sort(unique(as.vector(design))) == c(0, 1, 2)) != 3) {stop("Please code the matrix with 0, 1 and 2's only!")}
   
