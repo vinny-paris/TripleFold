@@ -2,8 +2,7 @@
 % Please edit documentation in R/what_frac.R
 \name{what_frac}
 \alias{what_frac}
-\title{Alias Structure Identifier
-Returns what fraction is the matix is split along be warned that it only pays attention to fully aliased situations so if only 2 of three levels appear the function will not flag them you have been warned.}
+\title{Alias Structure Identifier}
 \usage{
 what_frac(design_matrix)
 }
@@ -14,6 +13,5 @@ what_frac(design_matrix)
 This will return a matrix with one column (entitiled Aliased with Intercept) and rows corresponding to the effects confounded with the intercept.
 }
 \description{
-Alias Structure Identifier
 Returns what fraction is the matix is split along be warned that it only pays attention to fully aliased situations so if only 2 of three levels appear the function will not flag them you have been warned.
 }

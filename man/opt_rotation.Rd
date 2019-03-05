@@ -15,7 +15,7 @@ It will produce a list
 \item{psuedo-design matrix}{This is the fake design matrix which is the coded effects of length 3 that are aliased with the intercept in the original design. This will not neccessarly be a regular fractional factorial design (hence psuedo)}
 }
 \description{
-This function will produce an optimal rotation vector for some design. It will produce Resolution IV if possible and if not will find a minimal aberration. If multiple minimal aberration designs exist it will randomly choose one and ignore any "desirability" between factors.
+This function will produce an optimal rotation vector for some design. It will produce Resolution IV if possible and if not will find a minimal aberration. If multiple minimal aberration designs exist it will seek to minimize the number of 4th order terms and then return all vectors who do as well in that situation.
 }
 \examples{
 \donttest{
